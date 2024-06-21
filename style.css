@@ -33,6 +33,44 @@ img {
 
 .img-container {
   width: 100%;
+  height: 260px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.img-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  pointer-events: none;
+}
+
+.view-icon {
+  position: absolute;
+  width: 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.img-container:hover::before {
+  background-color: hsla(178, 100%, 50%, 0.5);
+}
+
+.img-container:hover {
+  cursor: pointer;
+}
+
+.img-container:hover .view-icon {
+  opacity: 1;
 }
 
 .img-container img {
@@ -42,6 +80,13 @@ img {
 h2 {
   color: hsl(0, 0%, 100%);
   margin: 1.5rem 0;
+  transition: color 0.3s ease;
+}
+
+h2:hover,
+.footer-text span:hover {
+  color: hsl(178, 100%, 50%);
+  cursor: pointer;
 }
 
 p {
@@ -85,6 +130,7 @@ hr {
 
 .footer-text span {
   color: #fff;
+  transition: color 0.3s ease;
 }
 
 .avatar {
@@ -117,8 +163,8 @@ hr {
     margin: 10px 0;
   }
 
-  h2, .details {
+  h2,
+  .details {
     margin: 1rem 0;
   }
-  
 }
