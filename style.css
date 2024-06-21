@@ -13,10 +13,6 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Outfit", sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   min-height: 100vh;
   background: hsl(217, 54%, 11%);
@@ -30,18 +26,13 @@ img {
 .container {
   margin: 10px;
   max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem;
   padding: 2rem;
   background: hsl(216, 50%, 16%);
   border-radius: 5px;
 }
 
 .img-container {
-  max-width: 280px;
+  width: 100%;
 }
 
 .img-container img {
@@ -50,7 +41,7 @@ img {
 
 h2 {
   color: hsl(0, 0%, 100%);
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0;
 }
 
 p {
@@ -99,7 +90,7 @@ hr {
 .avatar {
   width: 25px;
   border-radius: 50%;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
 }
 
 .attribution {
@@ -110,4 +101,24 @@ hr {
 .attribution a {
   color: #fff;
   text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    width: 300px;
+    height: 500px;
+    margin: 10px 0;
+  }
+
+  h2, .details {
+    margin: 1rem 0;
+  }
+  
 }
